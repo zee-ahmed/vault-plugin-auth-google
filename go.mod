@@ -1,4 +1,4 @@
-module github.com/simonswine/vault-plugin-auth-google
+module github.com/zee-ahmed/vault-plugin-auth-google
 
 go 1.13
 

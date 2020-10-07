@@ -2,7 +2,7 @@
 BINDIR ?= $(CURDIR)/bin
 PATH   := $(BINDIR):$(PATH)
 
-GOIMPORT := github.com/simonswine/vault-plugin-auth-google
+GOIMPORT := github.com/zee-ahmed/vault-plugin-auth-google
 
 DOCKER_IMAGE_NAME ?= grapeshot/google-auth-vault-plugin
 

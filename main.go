@@ -7,7 +7,7 @@ import (
 	"github.com/hashicorp/vault/api"
 	"github.com/hashicorp/vault/sdk/plugin"
 
-	"github.com/simonswine/vault-plugin-auth-google/google"
+	"github.com/zee-ahmed/vault-plugin-auth-google/google"
 )
 
 func main() {
