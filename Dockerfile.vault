@@ -1,4 +1,4 @@
-FROM golang:1.13.12 AS build
+FROM golang:1.13.15 AS build
 
 
 WORKDIR /go/src/github.com/hashicorp/vault
@@ -14,11 +14,11 @@ RUN \
   xz-utils && \
   npm install yarn@1.10.1 -g
 
-ENV VAULT_TAG v1.4.3
+ENV VAULT_TAG v1.4.6
 
 RUN git clone https://github.com/hashicorp/vault.git . && \
     git checkout "${VAULT_TAG}" && \
-    make bootstrap
+    make ci-bootstrap
 
 # use go mod
 ENV GO111MODULE on
@@ -46,8 +46,7 @@ RUN \
 RUN git checkout go.mod helper/builtinplugins/registry.go
 
 # built in plugin into vault
-RUN git am /tmp/patches/0001-Integrate-Google-G-Suite-credentials-plugin.patch
-RUN git am /tmp/patches/0002-Integrate-GPG-logical-plugin.patch
+RUN git am /tmp/patches/0001-Adding-my-forked-version-of-vault-plugin-auth-google.patch
 
 # rebuilt vault
 RUN \
